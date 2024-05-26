@@ -109,13 +109,14 @@ def apply_cmap(img: np.ndarray, cmap_name: str = 'bone') -> np.ndarray:
     cm = matplotlib.cm.get_cmap(cmap_name)
     return cm(img)
 
+from matplotlib.patches import Patch
 
 def visualize_alpha_fusion(img: np.ndarray,
                            mask: np.ndarray,
                            alpha: float = 0.25,
                            visualize=True,
-                           lower_filter=-700,
-                           upper_filter=500,):
+                           lower_filter=-150,
+                           upper_filter=1000,):
     """ Visualize both image and mask in the same plot. """
     # Your code here:
     #   Remember the Painter's Algorithm with alpha blending
